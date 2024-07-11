@@ -1,20 +1,13 @@
-const MainPage = () => {
+import AboutPage from '@/components/about-page';
+import MainPage from '@/components/main-page';
+
+const Page = () => {
   return (
-    <section className="h-svh flex px-7 items-center justify-center text-white">
-      <div className="space-y-6 md:space-y-8  max-w-2xl mx-auto text-start md:text-center">
-        <h1 className="font-bold text-5xl md:text-7xl text-gray-300">
-          Hi, Khalid here a web developer.
-        </h1>
-        <p className="text-xl font-medium text-zinc-400">
-          I build scalable and reliable web applications from stable backend and
-          frontend libraries and frameworks.
-        </p>
-        <button className="border-2 border-slate-400/40 bg-slate-700/20 px-6 text-zinc-200 font-medium rounded-lg py-2">
-          See resume
-        </button>
-      </div>
-    </section>
+    <>
+      <MainPage />
+      <AboutPage />
+    </>
   );
 };
 
-export default MainPage;
+export default Page;

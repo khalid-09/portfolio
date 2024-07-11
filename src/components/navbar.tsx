@@ -33,7 +33,6 @@ const Navbar = () => {
           className="text-zinc-100 w-5 h-5 md:hidden block"
         />
       </nav>
-      {/* <div className="bg-white text-blue-400" >kjdn</div> */}
     </header>
   );
 };
