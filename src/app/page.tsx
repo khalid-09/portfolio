@@ -5,7 +5,10 @@ const Page = () => {
   return (
     <>
       <MainPage />
-      <AboutPage />
+
+      <div className="max-w-7xl px-4 m-auto">
+        <AboutPage />
+      </div>
     </>
   );
 };

@@ -30,7 +30,7 @@ const Navbar = () => {
         </Link>
         <HamburgerMenuIcon
           onClick={handleClick}
-          className="text-zinc-100 w-5 h-5 md:hidden block"
+          className="text-zinc-100 cursor-pointer w-5 h-5 md:hidden block"
         />
       </nav>
     </header>

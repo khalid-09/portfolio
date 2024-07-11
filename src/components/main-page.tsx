@@ -8,7 +8,7 @@ const MainPage = () => {
           Hi, Khalid here{' '}
           <span className="text-stone-400">a web developer.</span>
         </h1>
-        <p className="text-xl font-medium text-zinc-400">
+        <p className="text-lg font-medium text-zinc-400">
           I build scalable and reliable web applications from stable backend and
           frontend libraries and frameworks.
         </p>
