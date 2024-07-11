@@ -1,6 +1,6 @@
 import { Project } from '@/libs/projects';
-import { GitHubLogoIcon, Link1Icon } from '@radix-ui/react-icons';
-import { Link2Icon, LinkIcon } from 'lucide-react';
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import { LinkIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({
-  project: { title, img, description, link },
+  project: { title, img, description, link, github },
 }: ProjectCardProps) => {
   return (
     <div className="bg-zinc-900 border border-gray-500/30 p-2 rounded-xl">
@@ -26,7 +26,7 @@ const ProjectCard = ({
             <span className="font-semibold">{title}</span>
           </Link>
           <div>
-            <Link href="">
+            <Link href={github}>
               <GitHubLogoIcon className="h-5 w-5 hover:scale-110 transition " />
             </Link>
           </div>

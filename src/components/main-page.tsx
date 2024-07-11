@@ -2,7 +2,10 @@ import Link from 'next/link';
 
 const MainPage = () => {
   return (
-    <section className="h-svh flex px-7 items-center justify-center text-white">
+    <section
+      id="home"
+      className="h-svh flex px-7 items-center justify-center text-white"
+    >
       <div className="space-y-6 md:space-y-8  max-w-2xl mx-auto text-start md:text-center">
         <h1 className="font-bold text-5xl md:text-7xl text-gray-300">
           Hi, Khalid here{' '}
