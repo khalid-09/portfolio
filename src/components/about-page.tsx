@@ -3,7 +3,7 @@ import { MoveRight } from 'lucide-react';
 
 const AboutPage = () => {
   return (
-    <section className="mb-10 p-6 md:p-12 space-y-5 rounded-xl bg-zinc-900 text-white">
+    <section className="mb-32 p-6 md:p-12 space-y-5 rounded-xl bg-zinc-900 text-white">
       <h3 className="text-4xl font-semibold">I build with,</h3>
       <p className="text-zinc-400 md:block hidden font-medium">
         I constantly learn new and exciting concepts in computer science and web
