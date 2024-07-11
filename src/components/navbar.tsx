@@ -7,13 +7,18 @@ import {
   TwitterLogoIcon,
 } from '@radix-ui/react-icons';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence } from 'framer-motion';
 import MobileNav from './mobile-nav';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, [isMenuOpen]);
 
   const handleClick = () => {
     setIsMenuOpen(prev => !prev);
@@ -40,12 +45,13 @@ const Navbar = () => {
           </nav>
         </header>
       </div>
-      {createPortal(
-        <AnimatePresence>
-          {isMenuOpen && <MobileNav key="mobile-nav" onClose={handleClick} />}
-        </AnimatePresence>,
-        document.body
-      )}
+      {isMounted &&
+        createPortal(
+          <AnimatePresence>
+            {isMenuOpen && <MobileNav key="mobile-nav" onClose={handleClick} />}
+          </AnimatePresence>,
+          document.body
+        )}
     </div>
   );
 };
