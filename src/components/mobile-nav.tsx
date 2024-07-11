@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Backdrop from './backdrop';
+import { useLenis } from '@/libs/lenis';
 
 const MobileNavVariants = {
   hidden: { y: -200 },
@@ -29,8 +30,18 @@ interface MobileNavProps {
 }
 
 const MobileNav = ({ onClose }: MobileNavProps) => {
-  const handleLinkClick = () => {
+  const lenis = useLenis();
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    target: string
+  ) => {
+    e.preventDefault();
     onClose();
+    const element = document.querySelector(target) as HTMLElement;
+    if (element && lenis) {
+      lenis.scrollTo(element);
+    }
   };
 
   return (
@@ -46,19 +57,22 @@ const MobileNav = ({ onClose }: MobileNavProps) => {
         <div className="bg-zinc-900 text-zinc-100 border border-zinc-700 border-opacity-30 rounded-full py-3 px-6 w-fit">
           <ul className="flex gap-5 flex-wrap">
             <li>
-              <Link href="/#home" onClick={handleLinkClick}>
+              <Link href="/#home" onClick={e => handleLinkClick(e, '#home')}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/#about" onClick={handleLinkClick}>
+              <a href="/#about" onClick={e => handleLinkClick(e, '#about')}>
                 About
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/#projects" onClick={handleLinkClick}>
+              <a
+                href="/#projects"
+                onClick={e => handleLinkClick(e, '#projects')}
+              >
                 Projects
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
