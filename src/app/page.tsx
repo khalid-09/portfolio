@@ -1,4 +1,5 @@
 import AboutPage from '@/components/about-page';
+import Footer from '@/components/footer';
 import MainPage from '@/components/main-page';
 import ProjectsPage from '@/components/projects-page';
 
@@ -12,9 +13,7 @@ const Page = () => {
           <ProjectsPage />
         </div>
       </div>
-      <footer className="font-bold text-4xl mb-16 text-zinc-200 text-center">
-        And that&apos;s all.
-      </footer>
+      <Footer />
     </>
   );
 };
