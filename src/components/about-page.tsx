@@ -1,11 +1,18 @@
+'use client';
+
 import { skills } from '@/libs/skills';
 import { MoveRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const AboutPage = () => {
   return (
-    <section
+    <motion.section
       id="about"
       className="mb-32 p-6 md:p-12 space-y-5 rounded-xl bg-zinc-900 text-white"
+      initial={{ opacity: 0, y: '100%' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
     >
       <h3 className="text-4xl font-semibold">I build with,</h3>
       <p className="text-zinc-400 md:block hidden font-medium">
@@ -27,7 +34,7 @@ const AboutPage = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 };
 

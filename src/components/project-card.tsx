@@ -1,8 +1,11 @@
+'use client';
+
 import { Project } from '@/libs/projects';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { LinkIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
   project: Project;
@@ -12,7 +15,13 @@ const ProjectCard = ({
   project: { title, img, description, link, github },
 }: ProjectCardProps) => {
   return (
-    <div className="bg-zinc-900 border border-gray-500/30 p-2 rounded-xl">
+    <motion.div
+      initial={{ opacity: 0, y: '100%' }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, type: 'spring', stiffness: 60 }}
+      viewport={{ once: true }}
+      className="bg-zinc-900 border border-gray-500/30 p-2 rounded-xl"
+    >
       <div className="relative h-56  rounded-xl overflow-hidden w-full">
         <Image src={img} alt={title} fill className="object-cover absolute" />
       </div>
@@ -36,7 +45,7 @@ const ProjectCard = ({
         </div>
         <p className="text-gray-400">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
